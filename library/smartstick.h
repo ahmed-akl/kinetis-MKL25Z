@@ -15,8 +15,8 @@
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@ initialize_LED @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //It initializes the registers required associated with the LED pins
-// PTB[18] is for GREEN LED
-// PTB[19] is for RED LED
+// PTB[18] is for RED LED
+// PTB[19] is for GREEN LED
 // PTD[1]  is fof Blue LED
 void initialize_LED(void){
 	SIM->SCGC5 |= (1<<10);  //clock for PORTB enabled
@@ -47,13 +47,13 @@ void LED(char led, char state ){
 	{
 		case RED_LED:
 			if (state == ON) 
-					{PTB->PCOR |= (1<<19);}
-					else{PTB->PSOR |= (1<<19);}
+					{PTB->PCOR |= (1<<18);}
+					else{PTB->PSOR |= (1<<18);}
 			break;
 					
 		case GREEN_LED:
-			if (state == ON) {PTB->PCOR |= (1<<18);}
-					else{PTB->PSOR |= (1<<18);}
+			if (state == ON) {PTB->PCOR |= (1<<19);}
+					else{PTB->PSOR |= (1<<19);}
 			break;
 					
 		case BLUE_LED:
